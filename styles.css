@@ -721,13 +721,23 @@ section {
     padding: var(--spacing-md) 0;
 }
 
-.about-text .about-section-header {
+.about-section-header {
     text-align: left;
     margin-bottom: var(--spacing-md);
+    padding: 0;
+    width: 100%;
 }
 
-.about-text .about-section-header .section-subtitle {
+.about-section-header .section-title {
     text-align: left;
+    margin-bottom: var(--spacing-xs);
+    width: 100%;
+}
+
+.about-section-header .section-subtitle {
+    text-align: left;
+    margin-bottom: 0;
+    width: 100%;
 }
 
 .btn-about-cta {
@@ -973,11 +983,15 @@ section {
         font-size: 4rem !important;
     }
 
-    .about-text .section-header {
+    .about-section-header {
         text-align: center !important;
     }
 
-    .about-text .section-subtitle {
+    .about-section-header .section-title {
+        text-align: center !important;
+    }
+
+    .about-section-header .section-subtitle {
         text-align: center !important;
     }
 
@@ -1010,11 +1024,15 @@ section {
         margin: 0 auto;
     }
 
-    .about-text .section-header {
+    .about-section-header {
         text-align: center !important;
     }
 
-    .about-text .section-subtitle {
+    .about-section-header .section-title {
+        text-align: center !important;
+    }
+
+    .about-section-header .section-subtitle {
         text-align: center !important;
     }
 }
