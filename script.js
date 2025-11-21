@@ -32,7 +32,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         
         if (target) {
-            const offsetTop = target.offsetTop - 80;
+            const offsetTop = target.offsetTop - 100;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -144,11 +144,14 @@ window.addEventListener('scroll', () => {
     const heroContent = document.querySelector('.hero-content');
     if (hero && scrolled < window.innerHeight) {
         // Only move background slightly, keep content fully visible
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-        // Keep content fully opaque and readable
+        // Use translateY only (not translate which could affect X axis)
+        hero.style.transform = `translate(0, ${scrolled * 0.3}px)`;
+        // Keep content fully opaque and readable, centered
         if (heroContent) {
             heroContent.style.opacity = 1;
-            heroContent.style.transform = `translateY(${scrolled * 0.1}px)`;
+            heroContent.style.transform = `translate(0, ${scrolled * 0.1}px)`;
+            heroContent.style.left = 'auto';
+            heroContent.style.right = 'auto';
         }
     }
 });
